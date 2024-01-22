@@ -5,7 +5,7 @@ from account.models import CustomUser
 # Create your models here.
 class Category(models.Model):
   name = models.CharField(max_length=50, unique=True)
-  slug =  models.SlugField(null=True, blank=True, unique=True)
+  slug =  models.SlugField(null=True, blank=True, unique=True, max_length=50)
 
   def save(self, *args, **kwargs):
     self.slug = slugify(self.name, allow_unicode=True)
@@ -13,8 +13,8 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-  title = models.TextField(blank=True, null=True)
-  slug =  models.SlugField(null=True, blank=True, unique=True)
+  title = models.CharField(max_length=250,blank=True, null=True)
+  slug =  models.SlugField(null=True, blank=True, unique=True,max_length=250)
   description = models.TextField()
   rating = models.IntegerField(blank=True, null=True)
   author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='news')
