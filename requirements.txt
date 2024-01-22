@@ -1,0 +1,9 @@
+asgiref
+dj-database-url
+Django
+pillow
+psycopg2
+python-dotenv
+sqlparse
+typing_extensions
+tzdata

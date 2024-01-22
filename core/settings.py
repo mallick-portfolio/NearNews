@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-# import dj_database_url
+import dj_database_url
 
 import os
 load_dotenv()
@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://book-library-ezh8.onrender.com',]
 
 
 # Application definition
@@ -85,15 +86,21 @@ ROOT_URLCONF = 'core.urls'
 
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': os.environ.get('DATABASE'),
-       'USER': os.environ.get('SQL_USER'),
-       'PASSWORD': os.environ.get('SQL_PASSWORD'),
-       'HOST': 'localhost',
-       'PORT': os.environ.get('SQL_PORT'),
-   }
+    'default': dj_database_url.config(
+        default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
+    )
 }
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.environ.get('DATABASE'),
+#        'USER': os.environ.get('SQL_USER'),
+#        'PASSWORD': os.environ.get('SQL_PASSWORD'),
+#        'HOST': 'localhost',
+#        'PORT': os.environ.get('SQL_PORT'),
+#    }
+# }
 
 # DATABASES = {
 #     'default': {
