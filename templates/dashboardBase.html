@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tailwindcss@2.0.1/dist/tailwind.min.css"
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+
+
+
+  </head>
+  <body>
+    {% comment %} {% include "header.html" %} {% endcomment %}
+
+
+
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <div id="alert-1" class="flex fixed bottom-5 right-5 items-center p-4 mb-4 text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+          <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+          </svg>
+          <span class="sr-only">Info</span>
+          <div class="ms-3 text-sm font-medium">
+            {{ message }}
+          </div>
+            <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-blue-50 text-blue-500 rounded-lg focus:ring-2 focus:ring-blue-400 p-1.5 hover:bg-blue-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-1" aria-label="Close">
+              <span class="sr-only">Close</span>
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+          </button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+
+<style>
+  /* Compiled dark classes from Tailwind */
+  .dark .dark\:divide-gray-700 > :not([hidden]) ~ :not([hidden]) {
+    border-color: rgba(55, 65, 81);
+  }
+  .dark .dark\:bg-gray-50 {
+    background-color: rgba(249, 250, 251);
+  }
+  .dark .dark\:bg-gray-100 {
+    background-color: rgba(243, 244, 246);
+  }
+  .dark .dark\:bg-gray-600 {
+    background-color: rgba(75, 85, 99);
+  }
+  .dark .dark\:bg-gray-700 {
+    background-color: rgba(55, 65, 81);
+  }
+  .dark .dark\:bg-gray-800 {
+    background-color: rgba(31, 41, 55);
+  }
+  .dark .dark\:bg-gray-900 {
+    background-color: rgba(17, 24, 39);
+  }
+  .dark .dark\:bg-red-700 {
+    background-color: rgba(185, 28, 28);
+  }
+  .dark .dark\:bg-green-700 {
+    background-color: rgba(4, 120, 87);
+  }
+  .dark .dark\:hover\:bg-gray-200:hover {
+    background-color: rgba(229, 231, 235);
+  }
+  .dark .dark\:hover\:bg-gray-600:hover {
+    background-color: rgba(75, 85, 99);
+  }
+  .dark .dark\:hover\:bg-gray-700:hover {
+    background-color: rgba(55, 65, 81);
+  }
+  .dark .dark\:hover\:bg-gray-900:hover {
+    background-color: rgba(17, 24, 39);
+  }
+  .dark .dark\:border-gray-100 {
+    border-color: rgba(243, 244, 246);
+  }
+  .dark .dark\:border-gray-400 {
+    border-color: rgba(156, 163, 175);
+  }
+  .dark .dark\:border-gray-500 {
+    border-color: rgba(107, 114, 128);
+  }
+  .dark .dark\:border-gray-600 {
+    border-color: rgba(75, 85, 99);
+  }
+  .dark .dark\:border-gray-700 {
+    border-color: rgba(55, 65, 81);
+  }
+  .dark .dark\:border-gray-900 {
+    border-color: rgba(17, 24, 39);
+  }
+  .dark .dark\:hover\:border-gray-800:hover {
+    border-color: rgba(31, 41, 55);
+  }
+  .dark .dark\:text-white {
+    color: rgba(255, 255, 255);
+  }
+  .dark .dark\:text-gray-50 {
+    color: rgba(249, 250, 251);
+  }
+  .dark .dark\:text-gray-100 {
+    color: rgba(243, 244, 246);
+  }
+  .dark .dark\:text-gray-200 {
+    color: rgba(229, 231, 235);
+  }
+  .dark .dark\:text-gray-400 {
+    color: rgba(156, 163, 175);
+  }
+  .dark .dark\:text-gray-500 {
+    color: rgba(107, 114, 128);
+  }
+  .dark .dark\:text-gray-700 {
+    color: rgba(55, 65, 81);
+  }
+  .dark .dark\:text-gray-800 {
+    color: rgba(31, 41, 55);
+  }
+  .dark .dark\:text-red-100 {
+    color: rgba(254, 226, 226);
+  }
+  .dark .dark\:text-green-100 {
+    color: rgba(209, 250, 229);
+  }
+  .dark .dark\:text-blue-400 {
+    color: rgba(96, 165, 250);
+  }
+  .dark .group:hover .dark\:group-hover\:text-gray-500 {
+    color: rgba(107, 114, 128);
+  }
+  .dark .group:focus .dark\:group-focus\:text-gray-700 {
+    color: rgba(55, 65, 81);
+  }
+  .dark .dark\:hover\:text-gray-100:hover {
+    color: rgba(243, 244, 246);
+  }
+  .dark .dark\:hover\:text-blue-500:hover {
+    color: rgba(59, 130, 246);
+  }
+
+  /* Custom style */
+  .header-right {
+      width: calc(100% - 3.5rem);
+  }
+  .sidebar:hover {
+      width: 16rem;
+  }
+  @media only screen and (min-width: 768px) {
+      .header-right {
+          width: calc(100% - 16rem);
+      }
+  }
+</style>
+<div x-data="setup()" :class="{ 'dark': isDark }">
+    <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+
+      <!-- Header -->
+      <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
+        <a href="{% url 'home' %}" class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
+
+          <span class="hidden md:block">NewsPortal</span>
+        </a>
+        <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
+          <div class="bg-white rounded flex items-center w-full max-w-xl mr-4 p-2 shadow-sm border border-gray-200">
+            <button class="outline-none focus:outline-none">
+              <svg class="w-5 text-gray-600 h-5 cursor-pointer" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </button>
+
+          </div>
+          <ul class="flex items-center">
+            <li>
+              <button
+                aria-hidden="true"
+                @click="toggleTheme"
+                class="group p-2 transition-colors duration-200 rounded-full shadow-md bg-blue-200 hover:bg-blue-200 dark:bg-gray-50 dark:hover:bg-gray-200 text-gray-900 focus:outline-none"
+              >
+                <svg
+                  x-show="isDark"
+                  width="24"
+                  height="24"
+                  class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke=""
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                  />
+                </svg>
+                <svg
+                  x-show="!isDark"
+                  width="24"
+                  height="24"
+                  class="fill-current text-gray-700 group-hover:text-gray-500 group-focus:text-gray-700 dark:text-gray-700 dark:group-hover:text-gray-500 dark:group-focus:text-gray-700"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke=""
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
+            </li>
+            <li>
+              {% if request.user.is_authenticated %}
+              <a href="{% url 'logout' %}" class="flex items-center mr-4 hover:text-blue-100">
+                <span class="inline-flex mr-1">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                </span>
+                Logout
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- ./Header -->
+
+      <!-- Sidebar -->
+      <div class="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-blue-900 dark:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
+       {% include "dashboardSidebar.html" %}
+      </div>
+      <!-- ./Sidebar -->
+
+     {% block content %}
+
+
+     {% endblock content %}
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+  <script>
+    const setup = () => {
+      const getTheme = () => {
+        if (window.localStorage.getItem('dark')) {
+          return JSON.parse(window.localStorage.getItem('dark'))
+        }
+        return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      }
+
+      const setTheme = (value) => {
+        window.localStorage.setItem('dark', value)
+      }
+
+      return {
+        loading: true,
+        isDark: getTheme(),
+        toggleTheme() {
+          this.isDark = !this.isDark
+          setTheme(this.isDark)
+        },
+      }
+    }
+  </script>
+
+
+  {% comment %} {% include "footer.html" %} {% endcomment %}
+  <script>
+    const modal = (el) => {
+      const toggle = (wrapperEl, mainEl) => {
+        document.querySelector('body').classList.toggle('overflow-y-hidden');
+        wrapperEl.classList.toggle('opacity-100');
+        wrapperEl.classList.toggle('opacity-0');
+        wrapperEl.classList.toggle('visible');
+        wrapperEl.classList.toggle('invisible');
+        mainEl.classList.toggle('-translate-y-full');
+        mainEl.classList.toggle('translate-y-0')
+      };
+
+      const extractElements = (target) => {
+        const wrapper = document.querySelector(`[data-modal='${target}']`);
+        const modal = wrapper.querySelector('[data-modal-main]');
+        return { wrapper, modal };
+      };
+
+      const showEvent = new CustomEvent('show', {
+        detail: {},
+        bubbles: true,
+        cancelable: true,
+        composed: false,
+      });
+
+      const hideEvent = new CustomEvent('hide', {
+        detail: {},
+        bubbles: true,
+        cancelable: true,
+        composed: false,
+      });
+
+      if (!document.querySelector('[data-modal-toggle]')) {
+        return;
+      }
+
+      if (!document.querySelector('[data-modal')) {
+        return;
+      }
+
+      [...document.querySelectorAll('[data-modal-toggle]')].forEach((btn) =>
+        btn.addEventListener('click', (event) => {
+          event.preventDefault();
+          const action = btn.getAttribute('data-modal-action');
+          const target = btn.getAttribute('data-modal-toggle');
+          const { wrapper, modal } = extractElements(target);
+
+          if (action === 'open') {
+            modal.dispatchEvent(showEvent);
+          }
+          if (action === 'close') {
+            modal.dispatchEvent(hideEvent);
+          }
+          toggle(wrapper, modal);
+        })
+      );
+    };
+
+    // init
+    modal();
+
+    // Custom event listeners
+
+
+    // This event is fired immediately before modal is start hidding
+    document.querySelector('[data-modal="example"]').addEventListener('hide', (event) => {
+      console.log('hide');
+    });
+  </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+  </body>
+</html>

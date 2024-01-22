@@ -51,7 +51,7 @@ def login_user(request):
       print(user)
       login(request, user)
       messages.success(request, "User login successfull!!!")
-      return redirect('home')
+      return redirect('dashboard')
     else:
       messages.error(request,"Your email or password not correct")
       return render(request, './account/login.html')

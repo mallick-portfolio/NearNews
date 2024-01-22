@@ -1,0 +1,87 @@
+{% extends "dashboardBase.html" %} {% block content %}
+
+<div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+  
+
+  <!-- component -->
+  <div class="overflow-x-auto">
+    <div
+      class="min-w-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans overflow-hidden"
+    >
+      <div class="w-full lg:w-5/6">
+        <div class="bg-white shadow-md rounded my-6">
+          <table class="min-w-max w-full table-auto">
+            <thead>
+              <tr
+                class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal"
+              >
+                <th class="py-3 px-6 text-left">User Id</th>
+                <th class="py-3 px-6 text-left">Full Name</th>
+                <th class="py-3 px-6 text-center">Email</th>
+                <th class="py-3 px-6 text-center">Joined Date</th>
+                <th class="py-3 px-6 text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600 text-sm font-light">
+              {% for user in users %}
+              <tr class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="py-3 px-6 text-left whitespace-nowrap">
+                  {{user.id}}
+                </td>
+                <td class="py-3 px-6 text-left">
+                  <a
+                    href="javascript:void(0)"
+                    class="mb-1 font-semibold transition-colors duration-200 ease-in-out text-lg/normal text-secondary-inverse hover:text-primary"
+                  >
+                    {{user.first_name}} {{user.first_name}}
+                  </a>
+                </td>
+                <td class="py-3 px-6 text-center">
+                  <a
+                    href="javascript:void(0)"
+                    class="mb-1 font-semibold transition-colors duration-200 ease-in-out text-lg/normal text-secondary-inverse hover:text-primary"
+                  >
+                    {{user.email}}
+                  </a>
+                </td>
+                <td class="py-3 px-6 text-center">
+                  <a
+                    href="javascript:void(0)"
+                    class="mb-1 font-semibold transition-colors duration-200 ease-in-out text-lg/normal text-secondary-inverse hover:text-primary"
+                  >
+                    {{user.date_joined}}
+                  </a>
+                </td>
+
+                <td class="py-3 px-6 text-center">
+                  {% if request.user.is_staff %}
+                  <div class="flex item-center justify-center">
+                    {% if user.is_staff %}
+                    <button
+                      class="px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      Admin
+                    </button>
+                    {% else %}
+                    <a
+                    href="{% url 'make_admin' user.id %}"
+                      class="px-3 py-2 text-xs font-medium text-center inline-flex items-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      Make admin
+                    </a>
+                    {% endif %}
+                  </div>
+
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
