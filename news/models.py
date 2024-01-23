@@ -27,6 +27,9 @@ class Post(models.Model):
   created_at = models.DateTimeField(auto_now_add=True)
   published_at = models.DateTimeField(blank=True, null=True)
 
+  class Meta:
+    ordering = ['-created_at']
+
 
   def save(self, *args, **kwargs):
     self.slug = slugify(self.title, allow_unicode=True)
