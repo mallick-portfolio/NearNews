@@ -85,9 +85,17 @@ ROOT_URLCONF = 'core.urls'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
+# external api
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
+#     )
+# }
+
+# internal api
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
+        default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a/newsportal_database',
     )
 }
 
