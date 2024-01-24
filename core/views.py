@@ -13,3 +13,5 @@ def home(request, cat_slug=None):
   categories = Category.objects.all()
   return render(request, './pages/home.html', {"posts": posts, "categories": categories})
 
+def contact(request):
+  return render(request, './pages/contact.html')

@@ -8,11 +8,13 @@
       href="{% url 'home' %}"
       class="flex items-center space-x-3 rtl:space-x-reverse"
     >
-      {% comment %} <img
+      {% comment %}
+      <img
         src="https://flowbite.com/docs/images/logo.svg"
         class="h-8"
         alt="Flowbite Logo"
-      /> {% endcomment %}
+      />
+      {% endcomment %}
       <span
         class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
         >NewsPortal</span
@@ -23,8 +25,6 @@
       class="flex gap-2 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
     >
       {% if request.user.is_authenticated %}
-
-
 
       <button
         type="button"
@@ -54,8 +54,6 @@
       </button>
 
       {% endif %}
-
-
 
       <button
         data-collapse-toggle="navbar-sticky"
@@ -99,35 +97,46 @@
         </li>
 
         <li>
-          <a href="/post/category/latest" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Latest</a>
+          <a
+            href="/post/category/latest"
+            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >Latest</a
+          >
         </li>
 
         <li>
           <a
-          href="/post/category/politics"
+            href="/post/category/politics"
             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
             >Politics</a
           >
         </li>
         <li>
           <a
-          href="/post/category/business"
+            href="/post/category/business"
             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
             >Business</a
           >
         </li>
         <li>
           <a
-          href="/post/category/sports"
+            href="/post/category/sports"
             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
             >Sports</a
           >
         </li>
         <li>
           <a
-          href="/post/category/tech"
+            href="/post/category/tech"
             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
             >Tech</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'contact' %}"
+            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            >Contact</a
           >
         </li>
       </ul>
