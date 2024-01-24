@@ -7,4 +7,4 @@ urlpatterns = [
     path('category/<slug:cat_slug>/', views.category_post, name='category_post'),
     path('page/category/<slug:cat_slug>/', home, name='filter_post'),
 
-]
+] 

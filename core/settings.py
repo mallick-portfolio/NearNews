@@ -82,28 +82,28 @@ ROOT_URLCONF = 'core.urls'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases 
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
 # external api
-DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
-    )
-}
-
-
-
 # DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': os.environ.get('DATABASE'),
-#        'USER': os.environ.get('SQL_USER'),
-#        'PASSWORD': os.environ.get('SQL_PASSWORD'),
-#        'HOST': 'localhost',
-#        'PORT': os.environ.get('SQL_PORT'),
-#    }
+#     'default': dj_database_url.config(
+#         default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
+#     )
 # }
+
+
+
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': os.environ.get('DATABASE'),
+       'USER': os.environ.get('SQL_USER'),
+       'PASSWORD': os.environ.get('SQL_PASSWORD'),
+       'HOST': 'localhost',
+       'PORT': os.environ.get('SQL_PORT'),
+   }
+}
 
 
 
@@ -143,13 +143,13 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
-
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = 'media/'
+# MEDIA_ROOT = BASE_DIR / 'media' # Here
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Here
+MEDIA_URL = '/media/'
 LOGIN_URL = 'login'
 
 
