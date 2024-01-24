@@ -82,7 +82,7 @@ ROOT_URLCONF = 'core.urls'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases 
 
 
 # external api
