@@ -92,12 +92,6 @@ DATABASES = {
     )
 }
 
-# internal api
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a/newsportal_database',
-#     )
-# }
 
 # DATABASES = {
 #    'default': {
@@ -156,6 +150,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+    BASE_DIR / '/opt/render/project/src/static'
 ]
 
 
