@@ -92,12 +92,7 @@ DATABASES = {
     )
 }
 
-# internal api
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a/newsportal_database',
-#     )
-# }
+
 
 # DATABASES = {
 #    'default': {
@@ -110,12 +105,6 @@ DATABASES = {
 #    }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 # Password validation
@@ -157,7 +146,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
