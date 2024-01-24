@@ -21,7 +21,7 @@ class Post(models.Model):
   description = models.TextField()
   author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='news')
   category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='news_category')
-  image_url = models.ImageField(upload_to="news/")
+  image_url = models.ImageField(upload_to="news/media/upload/")
   avg_rating = models.FloatField(blank=True, null=True)
 
   created_at = models.DateTimeField(auto_now_add=True)
