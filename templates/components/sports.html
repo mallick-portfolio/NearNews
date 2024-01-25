@@ -6,7 +6,7 @@
     <a href="/post/category/latest">Sports</a>
   </h2>
   <div class="grid grid-cols-3 gap-4">
-    {% for post in posts|slice:"0:1" %}
+    {% for post in sports|slice:"0:1" %}
     <div class="col-span-2 card shadow-2xl p-5 rounded-lg">
       <img
         src="{{post.image_url.url}}"
@@ -17,7 +17,7 @@
     </div>
     {% endfor %}
 
-    {% for post in posts|slice:"1:2" %}
+    {% for post in sports|slice:"1:2" %}
     <div class="col-span-1 card shadow-2xl p-5 rounded-lg">
       <img
         src="{{post.image_url.url}}"
@@ -27,7 +27,7 @@
       <p class="text-xl font-semibold mt-2">{{post.title}}</p>
     </div>
     {% endfor %}
-    {% for post in posts|slice:"0:3" %}
+    {% for post in sports|slice:"2:5" %}
     <div class="col-span-1 card shadow-2xl p-5 rounded-lg">
       <img
         src="{{post.image_url.url}}"

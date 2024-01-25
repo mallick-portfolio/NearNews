@@ -12,6 +12,7 @@ def home(request, cat_slug=None):
   slider_post = Post.objects.all()[:5]
   latest = Post.objects.filter(category__slug='latest')[:3]
   entertainment = Post.objects.filter(category__slug='entertainment')[:3]
+  sports = Post.objects.filter(category__slug='sports')
   categories = Category.objects.all()
   return render(request, './pages/home.html', {
     "posts": posts,
@@ -19,6 +20,7 @@ def home(request, cat_slug=None):
     "slider_post" : slider_post,
     "latest" :latest,
     "entertainment" :entertainment,
+    "sports" :sports,
     })
 
 def contact(request):
