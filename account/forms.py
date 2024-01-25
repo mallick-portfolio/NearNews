@@ -29,13 +29,9 @@ class CustomUserCreationForm(UserCreationForm):
   last_name = forms.CharField(max_length=100)
   birth_date = forms.DateField(widget=forms.DateInput(attrs={'type':'date'}))
   gender = forms.ChoiceField(choices=GENDER_TYPE)
-  street_address = forms.CharField(max_length=100)
-  city = forms.CharField(max_length= 100)
-  postal_code = forms.IntegerField()
-  country = forms.CharField(max_length=100)
   class Meta:
     model = CustomUser
-    fields = ['email', 'username', 'first_name', 'last_name','password1', 'password2', 'birth_date', 'street_address', 'city', 'postal_code', 'country']
+    fields = ['email', 'username', 'first_name', 'last_name','password1', 'password2', 'birth_date']
 
 
   def __init__(self, *args, **kwargs):

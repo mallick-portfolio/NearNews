@@ -67,12 +67,11 @@ class UserRegistration(FormView):
   success_url = reverse_lazy('home')
 
   def form_valid(self,form):
+    print("form_valid")
 
     user = form.save()
     token = default_token_generator.make_token(user)
-    print("token ", token)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
-    print("uid ", uid)
     confirm_link = f"http://127.0.0.1:8000/account/active/{uid}/{token}"
     email_subject = "Confirm Your Email"
     data = {}

@@ -16,7 +16,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
   city = models.CharField(max_length= 100,null=True, blank=True)
   postal_code = models.IntegerField(null=True, blank=True)
   country = models.CharField(max_length=100, null=True, blank=True)
-  gender = models.CharField(choices=GENDER_TYPE, max_length=20, null=True, blank=True)
+  gender = models.CharField(choices=GENDER_TYPE, max_length=20, null=True, blank=True, default="male")
 
   is_staff = models.BooleanField(default=False)
   is_active = models.BooleanField(default=True)

@@ -3,184 +3,206 @@
 
 {% block content %}
 
-
-
-
-<div class="container px-16 my-16">
-  <form class="mx-auto " method="post">
-    {% csrf_token %}
-    {% for hidden_field in form.hidden_fields %}
-      {{ hidden_field.errors }} {{ hidden_field }}
-    {% endfor %}
-
-    <div class='grid grid-cols-2 gap-4'>
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.email.label}}
-        </label>
-        {{ form.email }}
-        {% if form.email.errors %}
-          {% for error in form.email.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
+<!-- component -->
+<div class="bg-white relative lg:py-20">
+  <div class="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0 mr-auto mb-0 ml-auto max-w-7xl
+      xl:px-5 lg:flex-row">
+    <div class="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
+      <div class="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
+        <div class="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
+          <img src="{% static 'register.svg' %}" class="btn-"/>
+        </div>
       </div>
+      <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
+        <div class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
+            relative z-10">
+          <p class="w-full text-4xl font-medium text-center mb-5 leading-snug font-serif">Sign up for an account</p>
+          <form class="mx-auto " method="post">
+            {% csrf_token %}
+            {% for hidden_field in form.hidden_fields %}
+              {{ hidden_field.errors }} {{ hidden_field }}
+            {% endfor %}
 
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.username.label}}
-        </label>
-        {{ form.username }}
-        {% if form.username.errors %}
-          {% for error in form.username.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
+            <div class='grid grid-cols-2 gap-4'>
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.email.label}}
+                </label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                  {% for error in form.email.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.username.label}}
+                </label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                  {% for error in form.username.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+
+
+
+            <div class='grid grid-cols-2 gap-4'>
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.first_name.label}}
+                </label>
+                {{ form.first_name }}
+                {% if form.first_name.errors %}
+                  {% for error in form.first_name.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.last_name.label}}
+                </label>
+                {{ form.last_name }}
+                {% if form.last_name.errors %}
+                  {% for error in form.last_name.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+
+            <div class='grid grid-cols-2 gap-4'>
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.password1.label}}
+                </label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                  {% for error in form.password1.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.password2.label}}
+                </label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                  {% for error in form.password2.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+
+            <div class='grid grid-cols-2 gap-4'>
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.birth_date.label}}
+                </label>
+                {{ form.birth_date }}
+                {% if form.birth_date.errors %}
+                  {% for error in form.birth_date.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+
+              <div class="mb-5">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {{form.gender.label}}
+                </label>
+                {{ form.gender }}
+                {% if form.gender.errors %}
+                  {% for error in form.gender.errors %}
+                    <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+
+
+            <button type="submit" class="w-full inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 text-white">Submit</button>
+
+
+
+          </form>
+        </div>
+        <svg viewbox="0 0 91 91" class="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-300
+            fill-current"><g stroke="none" strokewidth="1" fillrule="evenodd"><g fillrule="nonzero"><g><g><circle
+            cx="3.261" cy="3.445" r="2.72"/><circle cx="15.296" cy="3.445" r="2.719"/><circle cx="27.333" cy="3.445"
+            r="2.72"/><circle cx="39.369" cy="3.445" r="2.72"/><circle cx="51.405" cy="3.445" r="2.72"/><circle cx="63.441"
+            cy="3.445" r="2.72"/><circle cx="75.479" cy="3.445" r="2.72"/><circle cx="87.514" cy="3.445" r="2.719"/></g><g
+            transform="translate(0 12)"><circle cx="3.261" cy="3.525" r="2.72"/><circle cx="15.296" cy="3.525"
+            r="2.719"/><circle cx="27.333" cy="3.525" r="2.72"/><circle cx="39.369" cy="3.525" r="2.72"/><circle
+            cx="51.405" cy="3.525" r="2.72"/><circle cx="63.441" cy="3.525" r="2.72"/><circle cx="75.479" cy="3.525"
+            r="2.72"/><circle cx="87.514" cy="3.525" r="2.719"/></g><g transform="translate(0 24)"><circle cx="3.261"
+            cy="3.605" r="2.72"/><circle cx="15.296" cy="3.605" r="2.719"/><circle cx="27.333" cy="3.605" r="2.72"/><circle
+            cx="39.369" cy="3.605" r="2.72"/><circle cx="51.405" cy="3.605" r="2.72"/><circle cx="63.441" cy="3.605"
+            r="2.72"/><circle cx="75.479" cy="3.605" r="2.72"/><circle cx="87.514" cy="3.605" r="2.719"/></g><g
+            transform="translate(0 36)"><circle cx="3.261" cy="3.686" r="2.72"/><circle cx="15.296" cy="3.686"
+            r="2.719"/><circle cx="27.333" cy="3.686" r="2.72"/><circle cx="39.369" cy="3.686" r="2.72"/><circle
+            cx="51.405" cy="3.686" r="2.72"/><circle cx="63.441" cy="3.686" r="2.72"/><circle cx="75.479" cy="3.686"
+            r="2.72"/><circle cx="87.514" cy="3.686" r="2.719"/></g><g transform="translate(0 49)"><circle cx="3.261"
+            cy="2.767" r="2.72"/><circle cx="15.296" cy="2.767" r="2.719"/><circle cx="27.333" cy="2.767" r="2.72"/><circle
+            cx="39.369" cy="2.767" r="2.72"/><circle cx="51.405" cy="2.767" r="2.72"/><circle cx="63.441" cy="2.767"
+            r="2.72"/><circle cx="75.479" cy="2.767" r="2.72"/><circle cx="87.514" cy="2.767" r="2.719"/></g><g
+            transform="translate(0 61)"><circle cx="3.261" cy="2.846" r="2.72"/><circle cx="15.296" cy="2.846"
+            r="2.719"/><circle cx="27.333" cy="2.846" r="2.72"/><circle cx="39.369" cy="2.846" r="2.72"/><circle
+            cx="51.405" cy="2.846" r="2.72"/><circle cx="63.441" cy="2.846" r="2.72"/><circle cx="75.479" cy="2.846"
+            r="2.72"/><circle cx="87.514" cy="2.846" r="2.719"/></g><g transform="translate(0 73)"><circle cx="3.261"
+            cy="2.926" r="2.72"/><circle cx="15.296" cy="2.926" r="2.719"/><circle cx="27.333" cy="2.926" r="2.72"/><circle
+            cx="39.369" cy="2.926" r="2.72"/><circle cx="51.405" cy="2.926" r="2.72"/><circle cx="63.441" cy="2.926"
+            r="2.72"/><circle cx="75.479" cy="2.926" r="2.72"/><circle cx="87.514" cy="2.926" r="2.719"/></g><g
+            transform="translate(0 85)"><circle cx="3.261" cy="3.006" r="2.72"/><circle cx="15.296" cy="3.006"
+            r="2.719"/><circle cx="27.333" cy="3.006" r="2.72"/><circle cx="39.369" cy="3.006" r="2.72"/><circle
+            cx="51.405" cy="3.006" r="2.72"/><circle cx="63.441" cy="3.006" r="2.72"/><circle cx="75.479" cy="3.006"
+            r="2.72"/><circle cx="87.514" cy="3.006" r="2.719"/></g></g></g></g></svg>
+        <svg viewbox="0 0 91 91" class="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-indigo-500
+            fill-current"><g stroke="none" strokewidth="1" fillrule="evenodd"><g fillrule="nonzero"><g><g><circle
+            cx="3.261" cy="3.445" r="2.72"/><circle cx="15.296" cy="3.445" r="2.719"/><circle cx="27.333" cy="3.445"
+            r="2.72"/><circle cx="39.369" cy="3.445" r="2.72"/><circle cx="51.405" cy="3.445" r="2.72"/><circle cx="63.441"
+            cy="3.445" r="2.72"/><circle cx="75.479" cy="3.445" r="2.72"/><circle cx="87.514" cy="3.445" r="2.719"/></g><g
+            transform="translate(0 12)"><circle cx="3.261" cy="3.525" r="2.72"/><circle cx="15.296" cy="3.525"
+            r="2.719"/><circle cx="27.333" cy="3.525" r="2.72"/><circle cx="39.369" cy="3.525" r="2.72"/><circle
+            cx="51.405" cy="3.525" r="2.72"/><circle cx="63.441" cy="3.525" r="2.72"/><circle cx="75.479" cy="3.525"
+            r="2.72"/><circle cx="87.514" cy="3.525" r="2.719"/></g><g transform="translate(0 24)"><circle cx="3.261"
+            cy="3.605" r="2.72"/><circle cx="15.296" cy="3.605" r="2.719"/><circle cx="27.333" cy="3.605" r="2.72"/><circle
+            cx="39.369" cy="3.605" r="2.72"/><circle cx="51.405" cy="3.605" r="2.72"/><circle cx="63.441" cy="3.605"
+            r="2.72"/><circle cx="75.479" cy="3.605" r="2.72"/><circle cx="87.514" cy="3.605" r="2.719"/></g><g
+            transform="translate(0 36)"><circle cx="3.261" cy="3.686" r="2.72"/><circle cx="15.296" cy="3.686"
+            r="2.719"/><circle cx="27.333" cy="3.686" r="2.72"/><circle cx="39.369" cy="3.686" r="2.72"/><circle
+            cx="51.405" cy="3.686" r="2.72"/><circle cx="63.441" cy="3.686" r="2.72"/><circle cx="75.479" cy="3.686"
+            r="2.72"/><circle cx="87.514" cy="3.686" r="2.719"/></g><g transform="translate(0 49)"><circle cx="3.261"
+            cy="2.767" r="2.72"/><circle cx="15.296" cy="2.767" r="2.719"/><circle cx="27.333" cy="2.767" r="2.72"/><circle
+            cx="39.369" cy="2.767" r="2.72"/><circle cx="51.405" cy="2.767" r="2.72"/><circle cx="63.441" cy="2.767"
+            r="2.72"/><circle cx="75.479" cy="2.767" r="2.72"/><circle cx="87.514" cy="2.767" r="2.719"/></g><g
+            transform="translate(0 61)"><circle cx="3.261" cy="2.846" r="2.72"/><circle cx="15.296" cy="2.846"
+            r="2.719"/><circle cx="27.333" cy="2.846" r="2.72"/><circle cx="39.369" cy="2.846" r="2.72"/><circle
+            cx="51.405" cy="2.846" r="2.72"/><circle cx="63.441" cy="2.846" r="2.72"/><circle cx="75.479" cy="2.846"
+            r="2.72"/><circle cx="87.514" cy="2.846" r="2.719"/></g><g transform="translate(0 73)"><circle cx="3.261"
+            cy="2.926" r="2.72"/><circle cx="15.296" cy="2.926" r="2.719"/><circle cx="27.333" cy="2.926" r="2.72"/><circle
+            cx="39.369" cy="2.926" r="2.72"/><circle cx="51.405" cy="2.926" r="2.72"/><circle cx="63.441" cy="2.926"
+            r="2.72"/><circle cx="75.479" cy="2.926" r="2.72"/><circle cx="87.514" cy="2.926" r="2.719"/></g><g
+            transform="translate(0 85)"><circle cx="3.261" cy="3.006" r="2.72"/><circle cx="15.296" cy="3.006"
+            r="2.719"/><circle cx="27.333" cy="3.006" r="2.72"/><circle cx="39.369" cy="3.006" r="2.72"/><circle
+            cx="51.405" cy="3.006" r="2.72"/><circle cx="63.441" cy="3.006" r="2.72"/><circle cx="75.479" cy="3.006"
+            r="2.72"/><circle cx="87.514" cy="3.006" r="2.719"/></g></g></g></g></svg>
       </div>
     </div>
-
-
-
-    <div class='grid grid-cols-2 gap-4'>
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.first_name.label}}
-        </label>
-        {{ form.first_name }}
-        {% if form.first_name.errors %}
-          {% for error in form.first_name.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.last_name.label}}
-        </label>
-        {{ form.last_name }}
-        {% if form.last_name.errors %}
-          {% for error in form.last_name.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-
-    <div class='grid grid-cols-2 gap-4'>
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.password1.label}}
-        </label>
-        {{ form.password1 }}
-        {% if form.password1.errors %}
-          {% for error in form.password1.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.password2.label}}
-        </label>
-        {{ form.password2 }}
-        {% if form.password2.errors %}
-          {% for error in form.password2.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-
-    <div class='grid grid-cols-2 gap-4'>
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.birth_date.label}}
-        </label>
-        {{ form.birth_date }}
-        {% if form.birth_date.errors %}
-          {% for error in form.birth_date.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.gender.label}}
-        </label>
-        {{ form.gender }}
-        {% if form.gender.errors %}
-          {% for error in form.gender.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-
-
-    <div class='grid grid-cols-2 gap-4'>
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.street_address.label}}
-        </label>
-        {{ form.street_address }}
-        {% if form.street_address.errors %}
-          {% for error in form.street_address.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.city.label}}
-        </label>
-        {{ form.city }}
-        {% if form.city.errors %}
-          {% for error in form.city.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-    <div class='grid grid-cols-2 gap-4'>
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.postal_code.label}}
-        </label>
-        {{ form.postal_code }}
-        {% if form.postal_code.errors %}
-          {% for error in form.postal_code.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-
-      <div class="mb-5">
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            {{form.country.label}}
-        </label>
-        {{ form.country }}
-        {% if form.country.errors %}
-          {% for error in form.country.errors %}
-            <p class="text-red-600 text-sm italic pb-2">{{ error }}</p>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-  </form>
+  </div>
 </div>
+
+
+
 
 
 {% endblock content %}
