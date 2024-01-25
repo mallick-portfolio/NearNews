@@ -9,19 +9,19 @@
         <!--author-->
      <div class="max-w-6xl px-10 py-6 mx-auto bg-gray-50">
 
-    <a href="#_" class="block transition duration-200 ease-out transform hover:scale-110">
+    <div class="block transition duration-200 ease-out transform hover:scale-110">
           <img class="object-cover w-full shadow-sm h-full" src="{{post.image_url.url}}">
-      </a>
+      </div>
 
     <!--post categories-->
     <div class="flex items-center justify-start mt-4 mb-4">
-          <a href="#"class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4">{{post.category.name}}</a>
+          <h2 class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500 mr-4">{{post.category.name}}</h2>
 
          </div>
         <div class="mt-2">
           <!--post heading-->
-          <a href="#"
-                class="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-purple-500  hover:underline">{{post.title}}</a>
+          <div
+                class="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-purple-500  hover:underline">{{post.title}}</div>
 
                 <!--post views-->
                 <div class="flex justify-start items-center mt-2">
@@ -87,6 +87,8 @@
 
 <div class="max-w-4xl py-16 xl:px-8 flex justify-center mx-auto">
 
+{% if request.user.is_authenticated %}
+
 <div class="w-full mt-16 md:mt-0 ">
   <form method='post' class="mx-auto mt-10 px-12">
     <h3 class="mb-6 text-2xl font-medium text-center">Write a comment</h3>
@@ -118,14 +120,11 @@
 
 
 
-
-
-
-
     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
   </form>
 
 </div>
+{% endif %}
 </div>
 
 
