@@ -14,6 +14,8 @@ def home(request, cat_slug=None):
   entertainment = Post.objects.filter(category__slug='entertainment')
   sports = Post.objects.filter(category__slug='sports')
   opinions = Post.objects.filter(category__slug='opinion')
+  techs = Post.objects.filter(category__slug='tech')
+  politics = Post.objects.filter(category__slug='politics')
   categories = Category.objects.all()
   return render(request, './pages/home.html', {
     "posts": posts,
@@ -23,6 +25,8 @@ def home(request, cat_slug=None):
     "entertainment" :entertainment,
     "sports" :sports,
     "opinions" :opinions,
+    "techs" :techs,
+    "politics" :politics,
     })
 
 def contact(request):
