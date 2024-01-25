@@ -1,40 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}
+  Home
+{% endblock title %}
  {% block content %}
  {% include "../components/bannerSlider.html" %}
 
 <div class="p-16 flex gap-3 divide-y-4">
-  {% comment %}
-  <div class="w-1/6">
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      Post Category
-    </h5>
-    <div
-      class="w-48 text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-    >
-      <button
-        type="button"
-        class="relative inline-flex items-center w-full px-4 py-2 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-      >
-        <a href="{% url 'home'  %}">All Post</a>
-      </button>
-
-      {% for category in categories %}
-      <a href="{% url 'filter_post' category.slug %}">
-        <button
-          type="button"
-          class="relative inline-flex items-center w-full px-4 py-2 text-sm font-medium border-b border-gray-200 rounded-t-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-        >
-          {{category.name}}
-        </button>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-  {% endcomment %}
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     {% for post in posts %}
     <div
       class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
@@ -51,33 +24,11 @@
           </h5>
         </a>
 
-        <p>
-          Category:
-          <span
-            class="bg-red-400 text-white text-xs font-medium my-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-white"
-          >
-            {{post.category.name}}
-          </span>
-        </p>
-        <p>
-          Author:
-          <span
-            class="bg-green-400 text-white text-xs font-medium my-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-white"
-          >
-            {{post.author.first_name}}
-          </span>
-        </p>
 
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {{post.description|truncatewords:25}}
         </p>
-        <div class="flex items-center justify-between">
-          <a
-            href="{% url 'post_details' post.slug %}"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >Details</a
-          >
-        </div>
+
       </div>
     </div>
 
@@ -87,5 +38,6 @@
 
 {% include "../components/entertainment.html" %}
 {% include "../components/opinion.html" %}
+{% include "../components/politics.html" %}
 
 {% endblock content %}
