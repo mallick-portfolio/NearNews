@@ -5,42 +5,41 @@
   <h2 class="text-xl font-semibold hover:text-blue-500 mb-2">
     <a href="/post/category/sports">Sports</a>
   </h2>
+
   <div class="grid grid-cols-3 gap-4">
     {% for post in sports|slice:"0:1" %}
-    <a href="{% url 'post_details' post.slug %}">
-      <div class="col-span-2 card shadow-2xl p-5 rounded-lg">
-        <img
+    <div class="p-5 rounded-lg shadow-2xl col-span-2">
+      <a href="{% url 'post_details' post.slug %}"
+        ><img
           src="{{post.image_url.url}}"
           alt="Rover on Mars"
-          class="w-full h-64 rounded-md object-cover"
+          class="w-full h-64 object-cover rounded-md"
         />
-        <p class="text-xl font-semibold mt-2">{{post.title}}</p>
-      </div>
-    </a>
+        <p class="text-xl font-semibold mt-2">{{post.title}}</p></a
+      >
+    </div>
     {% endfor %} {% for post in sports|slice:"1:2" %}
-    <a href="{% url 'post_details' post.slug %}">
-      <div class="col-span-1 card shadow-2xl p-5 rounded-lg">
-        <img
-          src="{{post.image_url.url}}"
-          alt="Person 3"
-          class="w-full h-64 object-cover"
-        />
-        <p class="text-xl font-semibold mt-2">{{post.title}}</p>
-      </div>
-    </a>
-
-    {% endfor %} {% for post in sports|slice:"2:5" %}
-    <a href="{% url 'post_details' post.slug %}">
-      <div class="col-span-1 card shadow-2xl p-5 rounded-lg">
-        <img
+    <div class="p-5 rounded-lg shadow-2xl col-span-1">
+      <a href="{% url 'post_details' post.slug %}"
+        ><img
           src="{{post.image_url.url}}"
           alt="Rocket launch"
-          class="w-full rounded-md h-64 object-cover"
+          class="w-full h-64 object-cover rounded-md"
         />
-        <p class="text-xl font-semibold mt-2">{{post.title}}</p>
-      </div>
-    </a>
-
+        <p class="text-xl font-semibold mt-2">{{post.title}}</p></a
+      >
+    </div>
+    {% endfor %} {% for post in sports|slice:"2:5" %}
+    <div class="p-5 rounded-lg shadow-2xl col-span-1">
+      <a href="{% url 'post_details' post.slug %}"
+        ><img
+          src="{{post.image_url.url}}"
+          alt="Person 1"
+          class="w-full h-64 object-cover rounded-md"
+        />
+        <p class="text-xl font-semibold mt-2">{{post.title}}</p></a
+      >
+    </div>
     {% endfor %}
   </div>
 </div>
