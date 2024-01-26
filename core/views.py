@@ -10,7 +10,7 @@ def home(request, cat_slug=None):
   else:
     posts = Post.objects.all()[:6]
   slider_post = Post.objects.all()[:5]
-  latest = Post.objects.filter(category__slug='latest')
+  latest = Post.objects.filter(category__slug='latest')[:6]
   entertainment = Post.objects.filter(category__slug='entertainment')
   sports = Post.objects.filter(category__slug='sports')
   opinions = Post.objects.filter(category__slug='opinion')

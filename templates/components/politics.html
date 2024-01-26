@@ -1,11 +1,11 @@
 {% load static %}
 
-<div class="px-12">
-  <div class="border-t-4 border-gray-500 pt-6"></div>
-  <h2 class="text-xl font-semibold hover:text-blue-500 mb-2">
+<div class="px-12 mt-8">
+  <div class="w-full h-px bg-gradient-to-r py-1 rounded-md from-indigo-500 via-purple-500 to-pink-500"></div>
+  <h2 class="text-xl font-semibold hover:text-blue-500 mt-2">
     <a href="/post/category/politics">Politics</a>
   </h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
     {% for post in politics|slice:"0:3" %}
     <a href="{% url 'post_details' post.slug %}">
       <div class="bg-white rounded-lg overflow-hidden shadow-2xl">
