@@ -86,13 +86,18 @@ ROOT_URLCONF = 'core.urls'
 
 
 # external api
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
+#     )
+# }
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://newsportal_database_user:SXjV4cuhNC99Q6Mx9nE1rheawgix8Rzp@dpg-cmn55pocmk4c73e5sbk0-a.oregon-postgres.render.com/newsportal_database',
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-
-
 
 # DATABASES = {
 #    'default': {
